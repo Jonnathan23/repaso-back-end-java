@@ -1,5 +1,7 @@
 package bussines.repaso;
 
+import java.util.List;
+
 import Dao.ProductoDao;
 import Model.Productos;
 import jakarta.ejb.Stateless;
@@ -28,6 +30,10 @@ public class GestionProducto {
 		if (producto == null) throw new Exception("Producto invalido");
 		
 		productoDao.update(producto);
+	}
+	
+	public List<Productos> listarProductos(){
+		return productoDao.listarProductos();
 	}
 	
 	

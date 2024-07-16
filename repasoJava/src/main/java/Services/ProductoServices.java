@@ -1,5 +1,8 @@
 package Services;
 
+import java.util.List;
+
+
 import Model.Productos;
 import bussines.repaso.GestionProducto;
 import jakarta.inject.Inject;
@@ -58,8 +61,14 @@ public class ProductoServices {
 		} catch (Exception e) {
 			// TODO: handle exception
 			return null;
-		}
-		
+		}		
+	}
+	
+	@GET
+	@Produces("application/json")
+	public List<Productos> list(){
+		List<Productos> productos = gestionProducto.listarProductos();
+		return productos;
 	}
 
 }
